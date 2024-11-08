@@ -4,6 +4,12 @@
 
 <beans>
     <bean class="org.socgen.ComputerEngineer" id="computerEngineer">
+<!--    Setter DI:-->
+        <property name="name" value="Apeksha"/>
+        <property name="skills" value=".Net, MVC, Devops, Testing, Backend"/>
 
+<!--        Constructor DI-->
+<!--        <constructor-arg value="Teja"/>-->
+<!--        <constructor-arg value="HTML, TS, React"/>-->
     </bean>
 </beans>
