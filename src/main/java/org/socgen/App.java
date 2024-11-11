@@ -11,14 +11,18 @@ public class App
     public static void main( String[] args )
     {
 //        1. Load the context
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("annotations_context.xml");
 
 //        2. Get a reference to the bean
 //        ComputerEngineer engineer = context.getBean("computerEngineer", ComputerEngineer.class);
 ////        Call methods on the bean
 //        engineer.workForWages();
 
-        CivilEngineer engineer =  context.getBean("civilEngineer", CivilEngineer.class);
+//        CivilEngineer engineer =  context.getBean("civilEngineer", CivilEngineer.class);
+//
+//        engineer.workForWages();
+
+        AnnotationsEngineer engineer = context.getBean("anEngineer", AnnotationsEngineer.class);
 
         engineer.workForWages();
 
