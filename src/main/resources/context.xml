@@ -7,9 +7,33 @@
 <!--    Setter DI:-->
         <property name="name" value="Apeksha"/>
         <property name="skills" value=".Net, MVC, Devops, Testing, Backend"/>
+<!--        <property name="address" ref="secondAddress" />-->
+
+        <property name="addresses">
+            <list>
+                <ref bean="address"/>
+                <ref bean="secondAddress"/>
+            </list>
+        </property>
 
 <!--        Constructor DI-->
 <!--        <constructor-arg value="Teja"/>-->
 <!--        <constructor-arg value="HTML, TS, React"/>-->
     </bean>
+
+    <bean class="org.socgen.Address" id="address">
+        <property name="city" value="Bangalore" />
+        <property name="pinCode" value="560066" />
+    </bean>
+
+    <bean class="org.socgen.Address" id="secondAddress">
+        <property name="city" value="Pune" />
+        <property name="pinCode" value="110087" />
+    </bean>
+
+    <bean init-method="callAtStart" destroy-method="callAtEnd" class="org.socgen.CivilEngineer" id="civilEngineer" autowire="byName">
+
+    </bean>
+
+
 </beans>
